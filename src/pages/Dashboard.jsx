@@ -2,23 +2,35 @@ import "../styles/navigatingDivs.css";
 import NavigatingDiv from "../components/NavigatingDiv";
 import TopBar from "../components/TopBar";
 import UploadBox from "../components/UploadBox";
+import AfterUpload from "../components/AfterUpload";
+import { useRef, useState } from "react";
 
 const Dashboard = () => {
+  const [showTable, setShowTable] = useState(false);
+  const afterUploadRef = useRef(null);
 
+  const handleShowTable = () => {
+    setShowTable(true);
+    // Scroll to the AfterUpload component
+    afterUploadRef.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
-    <div className="h-[100%] flex">
-      <div className="h-[100%]">
+    <div className="h-screen flex ">
+      <div className="h-full sticky top-0 left-0">
         <NavigatingDiv />
       </div>
-      <div className="w-[100%]">
+
+      <div className="w-full overflow-auto">
         <div>
-          <TopBar  name={name}/>
+          <TopBar />
         </div>
 
         <div>
-          <UploadBox />
+          <UploadBox handleShowTable={handleShowTable} />
         </div>
+
+        <div ref={afterUploadRef}>{showTable && <AfterUpload />}</div>
       </div>
     </div>
   );
