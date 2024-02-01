@@ -1,6 +1,6 @@
 import React from "react";
 
-const SignInForm = () => {
+const SignInForm = ({changePage}) => {
   return (
     <div className="text-left p-10 font-semibold w-[400px] bg-white rounded-md">
       <form className="flex flex-col space-y-5">
@@ -27,7 +27,7 @@ const SignInForm = () => {
         <p className="text-blue-500 hover:cursor-pointer">Forgot password?</p>
 
         <div className="flex text-white ">
-            <button className="flex-grow bg-[#605BFF]">Sign In</button>
+            <button className="flex-grow bg-[#605BFF]" onClick={changePage}>Sign In</button>
         </div>
       </form>
 

@@ -10,7 +10,7 @@ import SignInForm from "../components/SignInForm";
 import googleSignIn from "../assets/GoogleSignIn.png";
 import appleSignIn from "../assets/AppleSignIn.png";
 
-const SignInPage = () => {
+const SignInPage = ({changePage}) => {
   return (
     <div className="flex h-[100%] flex-wrap overflow-hidden">
       <div
@@ -52,7 +52,7 @@ const SignInPage = () => {
           </div>
         </div>
         <div>
-          <SignInForm />
+          <SignInForm changePage={changePage}/>
         </div>
       </div>
     </div>
