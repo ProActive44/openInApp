@@ -1,0 +1,32 @@
+.navigatingDivs img {
+  width: 20px;
+  align-items: flex-start;
+  /* filter: grayscale(100%); */
+  /* filter: hue-rotate(90deg);  */
+  /* filter: contrast(1000%); */
+}
+
+.navigatingDivs div {
+  display: flex;
+  gap: 10px;
+  font-weight: 700;
+  /* justify-content: space-evenly; */
+  align-items: center;
+  width: 60%;
+  height: 60px;
+  /* background-color: rgb(219, 223, 228); */
+  margin: auto;
+  /* border: 1px solid red; */
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.navigatingDivs div:hover {
+   cursor: pointer;
+   color: blue;
+}
+
+
+.topIcons{
+    cursor: pointer;
+}
